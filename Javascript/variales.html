@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>variables</title>
+    <style>
+        .bluebox{
+            background-color: #4267B2;
+            color: white;
+                height: 100px;
+            width: auto;
+        }
+        .yellowbox{
+            background-color: #ef8a07;
+            height: 100px;
+            width: auto;
+
+        }
+        .greenbox{
+            background-color: #f4fb1c;
+            height: 100px;
+            width: auto;
+        }
+        .great{
+            background-color: crimson;
+        }
+    
+    </style>
+    </head>
+    
+    <body>
+    <div class="bluebox" id="facebook">
+        <p>Facebook is <span class="great">great</span></p>
+        </div>
+        <div class="yellowbox" id="apple">
+        <p>Apple</p>
+        </div>
+        <div>
+        <p class="greenbox" id="microsoft">Microsoft</p>
+        </div>
+        <button id="button1">change fb style</button>
+        <button id="button2">changle apple style</button>
+        <button id="button3" onclick="swap('facebook','apple')">swap F and A</button>
+        <button id="button4" onclick="swap('apple','microsoft')">swap A and M</button>
+       <p id="counter"> 0</p>
+       <button onclick="clearInterval(myCounter)" > stop counting
+    </button>
+       
+       <script>
+       var colorFacebook = 'rgb(18,149,69)';
+       document.getElementById("button1").onclick = function(){
+           document.getElementById("facebook").style.backgroundColor = colorFacebook;
+       }
+       
+   var colorApple;
+       document.getElementById("button2").onclick = function(){
+             var a = Math.round(Math.random()*256);
+            var b = Math.round(Math.random()*256);
+            var c = Math.round(Math.random()*256);
+           document.getElementById("apple").style.backgroundColor = colorApple = 'rgb('+ a + ',' + b + ',' + c +')';
+            
+       }
+
+
+
+       function swap(id1,id2){
+           var y=document.getElementById(id1).innerHTML;
+           var z = document.getElementById(id2).innerHTML;
+           document.getElementById(id2).innerHTML = y;
+           document.getElementById(id1).innerHTML = z;
+       }
+
+
+
+       var counter = document.getElementById("counter");
+       var x=0;
+       var myCounter = setInterval(function(){x++; counter.innerHTML=x;},1000);
+       </script>
+    </body>
+</html>
